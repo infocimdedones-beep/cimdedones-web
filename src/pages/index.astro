@@ -3,21 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cim de Dones - Guies de Muntanya</title>
+  <title>Cim de Dones</title>
 
   <style>
+    :root{
+      --primary: #7c3aed;     /* lila principal */
+      --dark: #120818;        /* quasi negre violeta */
+      --soft: #f5f3ff;        /* fons suau lila */
+      --card: #ffffff;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      color: #1e1e1e;
-      background: #f6f7f7;
+      background: var(--soft);
+      color: var(--dark);
       scroll-behavior: smooth;
     }
 
     /* HERO */
     header {
       height: 100vh;
-      background: url('/WhatsApp Image 2026-06-18 at 18.38.42.jpeg') center/cover;
+      background:
+        linear-gradient(rgba(18,8,24,0.5), rgba(18,8,24,0.5)),
+        url('/WhatsApp Image 2026-06-18 at 18.38.42.jpeg') center/cover;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -30,39 +40,43 @@
     header h1 {
       font-size: 4em;
       margin: 0;
-      color: #120818;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+      color: #c4b5fd;
     }
 
     header p {
       font-size: 1.3em;
       max-width: 600px;
-      color: #120818;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+      opacity: 0.9;
     }
 
     .btn-primary {
       margin-top: 20px;
-      background: #2e6b4f;
+      background: var(--primary);
       color: white;
       padding: 12px 20px;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
     }
 
+    .btn-primary:hover {
+      background: #5b21b6;
+    }
+
+    /* NAV */
     nav {
       position: sticky;
       top: 0;
-      background: #1f3b2c;
+      background: var(--dark);
       display: flex;
       justify-content: center;
-      padding: 10px;
+      padding: 12px;
       z-index: 1000;
     }
 
     nav a {
-      color: white;
+      color: #c4b5fd;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
@@ -77,26 +91,52 @@
     h2 {
       text-align: center;
       margin-bottom: 40px;
+      color: var(--dark);
     }
 
-    /* CARDS */
+    /* EXPERIÈNCIES */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
 
     .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: var(--card);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #ede9fe;
+      color: var(--primary);
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      margin-bottom: 10px;
     }
 
     /* GALERIA */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 10px;
     }
 
@@ -104,7 +144,7 @@
       width: 100%;
       height: 200px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 12px;
     }
 
     /* CONTACTE */
@@ -115,10 +155,10 @@
     .whatsapp {
       display: inline-block;
       margin-top: 15px;
-      background: #25D366;
+      background: #7c3aed;
       color: white;
       padding: 12px 18px;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
     }
@@ -126,88 +166,106 @@
     footer {
       text-align: center;
       padding: 30px;
-      background: #1f3b2c;
-      color: white;
+      background: var(--dark);
+      color: #c4b5fd;
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <header>
-    <h1>Cim de Dones</h1>
-    <p>Ascensions al Pirineu català per a dones que volen descobrir la muntanya, créixer i compartir camí.</p>
-    <a class="btn-primary" href="#experiencies">Descobreix les sortides</a>
-  </header>
+<!-- HERO -->
+<header>
+  <h1>Cim de Dones</h1>
+  <p>Ascensions al Pirineu català per a dones que volen descobrir la muntanya, créixer i compartir camí.</p>
+  <a class="btn-primary" href="#experiencies">Descobreix les sortides</a>
+</header>
 
-  <!-- NAV -->
-  <nav>
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <img src="/logo.png" alt="Cim de Dones">
+    <span>Cim de Dones</span>
+  </div>
+
+  <div class="links">
     <a href="#quisom">Qui som</a>
     <a href="#experiencies">Experiències</a>
     <a href="#galeria">Galeria</a>
     <a href="#contacte">Contacte</a>
-  </nav>
+  </div>
+</nav>
 
-  <!-- QUI SOM -->
-  <section id="quisom">
-    <h2>Qui som</h2>
-    <p>
-      Cim de Dones és un projecte de guiatge de muntanya creat per oferir experiències segures i inspiradores al Pirineu català.
-      Acompanyem dones de diferents nivells perquè puguin descobrir la muntanya, aprendre tècnica i gaudir del camí en comunitat.
-    </p>
-  </section>
+<!-- QUI SOM -->
+<section id="quisom">
+  <h2>Qui som</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">
+    Cim de Dones és un projecte de guiatge de muntanya que crea experiències segures i transformadores al Pirineu.
+  </p>
+</section>
 
-  <!-- EXPERIÈNCIES -->
-  <section id="experiencies">
-    <h2>Experiències</h2>
+<!-- EXPERIÈNCIES AMB IMATGE -->
+<section id="experiencies">
+  <h2>Experiències</h2>
 
-    <div class="grid">
+  <div class="grid">
 
-      <div class="card">
-        <h3>🏔️ Pica d’Estats</h3>
-        <p>El cim més alt de Catalunya (3.143 m). Ruta exigent de 2 dies.</p>
+    <div class="card">
+      <img src="/pica.jpg" alt="Pica d'Estats">
+      <div class="card-content">
+        <span class="tag">Alta muntanya</span>
+        <h3>Pica d’Estats</h3>
+        <p>El cim més alt de Catalunya (3.143 m). 2 dies d’aventura intensa.</p>
       </div>
-
-      <div class="card">
-        <h3>⛰️ Puigmal</h3>
-        <p>Ideal per iniciació avançada. Vistes espectaculars del Pirineu oriental.</p>
-      </div>
-
-      <div class="card">
-        <h3>🧗 Pedraforca</h3>
-        <p>Ascensió icònica amb caràcter tècnic moderat i molt paisatge.</p>
-      </div>
-
     </div>
-  </section>
 
-  <!-- GALERIA -->
-  <section id="galeria">
-    <h2>Galeria</h2>
-
-    <div class="gallery">
-      <img src="/WhatsApp Image 2026-06-18 at 18.38.17 (1).jpeg">
-      <img src="/WhatsApp Image 2026-06-18 at 18.38.17.jpeg">
-      <img src="/WhatsApp Image 2026-06-18 at 18.38.43.jpeg">
-      <img src="/WhatsApp Image 2026-06-18 at 18.38.34.jpeg">
+    <div class="card">
+      <img src="/puigmal.jpg" alt="Puigmal">
+      <div class="card-content">
+        <span class="tag">Iniciació avançada</span>
+        <h3>Puigmal</h3>
+        <p>Clàssic del Pirineu oriental amb vistes espectaculars.</p>
+      </div>
     </div>
-  </section>
 
-  <!-- CONTACTE -->
-  <section id="contacte" class="contact">
-    <h2>Contacte</h2>
-    <p>Vols unir-te a una sortida o demanar informació?</p>
-    <p>Email: info@cimdedones.cat</p>
+    <div class="card">
+      <img src="/pedraforca.jpg" alt="Pedraforca">
+      <div class="card-content">
+        <span class="tag">Icònic</span>
+        <h3>Pedraforca</h3>
+        <p>Ascensió emblemàtica amb caràcter i paisatge únic.</p>
+      </div>
+    </div>
 
-    <a class="whatsapp" href="https://wa.me/681041268" target="_blank">
-      Escriu-nos per WhatsApp
-    </a>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    © 2026 Cim de Dones · Muntanya, comunitat i creixement
-  </footer>
+<!-- GALERIA -->
+<section id="galeria">
+  <h2>Galeria</h2>
+
+  <div class="gallery">
+    <img src="/foto1.jpg">
+    <img src="/foto2.jpg">
+    <img src="/foto3.jpg">
+    <img src="/foto4.jpg">
+  </div>
+</section>
+
+<!-- CONTACTE -->
+<section id="contacte" class="contact">
+  <h2>Contacte</h2>
+  <p>Email: info@cimdedones.cat</p>
+
+  <a class="whatsapp" href="https://wa.me/681041268" target="_blank">
+    Escriu-nos per WhatsApp
+  </a>
+</section>
+
+<footer>
+  © 2026 Cim de Dones · Muntanya, comunitat i creixement
+</footer>
 
 </body>
 </html>
