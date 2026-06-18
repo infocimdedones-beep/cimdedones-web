@@ -1,5 +1,209 @@
----
----
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cim de Dones - Guies de Muntanya</title>
 
-<h1>Benvingut a Cim de Dones</h1>
-<p>Web de productes en construcció</p>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #1e1e1e;
+      background: #f6f7f7;
+      scroll-behavior: smooth;
+    }
+
+    /* HERO */
+    header {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e') center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 4em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.3em;
+      max-width: 600px;
+    }
+
+    .btn-primary {
+      margin-top: 20px;
+      background: #2e6b4f;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #1f3b2c;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* GALERIA */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* CONTACTE */
+    .contact {
+      text-align: center;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      margin-top: 15px;
+      background: #25D366;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #1f3b2c;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <h1>Cim de Dones</h1>
+    <p>Ascensions al Pirineu català per a dones que volen descobrir la muntanya, créixer i compartir camí.</p>
+    <a class="btn-primary" href="#experiencies">Descobreix les sortides</a>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#quisom">Qui som</a>
+    <a href="#experiencies">Experiències</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contacte">Contacte</a>
+  </nav>
+
+  <!-- QUI SOM -->
+  <section id="quisom">
+    <h2>Qui som</h2>
+    <p>
+      Cim de Dones és un projecte de guiatge de muntanya creat per oferir experiències segures i inspiradores al Pirineu català.
+      Acompanyem dones de diferents nivells perquè puguin descobrir la muntanya, aprendre tècnica i gaudir del camí en comunitat.
+    </p>
+  </section>
+
+  <!-- EXPERIÈNCIES -->
+  <section id="experiencies">
+    <h2>Experiències</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>🏔️ Pica d’Estats</h3>
+        <p>El cim més alt de Catalunya (3.143 m). Ruta exigent de 2 dies.</p>
+      </div>
+
+      <div class="card">
+        <h3>⛰️ Puigmal</h3>
+        <p>Ideal per iniciació avançada. Vistes espectaculars del Pirineu oriental.</p>
+      </div>
+
+      <div class="card">
+        <h3>🧗 Pedraforca</h3>
+        <p>Ascensió icònica amb caràcter tècnic moderat i molt paisatge.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria">
+    <h2>Galeria</h2>
+
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+      <img src="https://images.unsplash.com/photo-1526481280695-3c687fd5432c">
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e">
+    </div>
+  </section>
+
+  <!-- CONTACTE -->
+  <section id="contacte" class="contact">
+    <h2>Contacte</h2>
+    <p>Vols unir-te a una sortida o demanar informació?</p>
+    <p>Email: info@cimdedones.cat</p>
+
+    <a class="whatsapp" href="https://wa.me/000000000" target="_blank">
+      Escriu-nos per WhatsApp
+    </a>
+  </section>
+
+  <footer>
+    © 2026 Cim de Dones · Muntanya, comunitat i creixement
+  </footer>
+
+</body>
+</html>
